@@ -1,0 +1,35 @@
+---
+id: 'epa-tabular-data'
+name: EPA Tabular data placeholder
+description: EPA Tabular data placeholder description
+featured: true
+media:
+  src: ::file ./volcano--discovery-cover.jpg
+  alt: Ash cloud over mountain
+  author:
+    name: Yosh Ginsu
+    url: https://unsplash.com/photos/qexZLgMcbPc
+pubDate: 2023-08-07
+taxonomy:
+  - name: Topics
+    values:
+      - Air Quality
+---
+<Block>
+  <Prose>
+    Watching lava and magma flow from an erupting volcano may seem fascinating at first sight. But volcanoes emit dangerous gasses, including [sulfur dioxide](https://so2.gsfc.nasa.gov/so2intro.html) (SO₂), which can be toxic to the human body and the environment. 
+
+    The most significant natural contributor to sulfur emissions is volcanic degassing, or when large amounts of gas escape through the soil near volcanoes. Volcanic gases are classified as air pollutants in many countries because of their effects on the human respiratory system. 
+    
+  </Prose>
+</Block>
+
+<Block type='wide'>
+  <Figure>
+    <Table
+      dataPath='/data/ghgp_data_by_year.xlsx'
+      excelOption={{ sheetNumber: 0, parseOption: { range: 3 } }}
+    />
+    <Caption> Wide block Table example</Caption>
+  </Figure>
+</Block>
