@@ -41,6 +41,10 @@ module.exports = {
         "Explore the guided narratives below to learn more about greenhouse gas measurement, changes over time, events and human-related causes and contributions.",
     dataCatalogBanner:
         "This dashboard is for exploring key datasets that provide insight into greenhouse gas sources, sinks, emissions, fluxes, and events.",
+    tempBanner:
+        "Attending AMS Annual Meeting in Baltimore?  Join the GHG Center / VEDA workshop and learn about Greenhouse Gases using Open Source data and tools. Register Here!",
+    tempBannerUrl:
+        "https://annual.ametsoc.org/index.cfm/2024/registration/short-course-registration/"
   },
 
   theme: {
