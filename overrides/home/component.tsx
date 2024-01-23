@@ -1,10 +1,9 @@
-import React, { useState } from "$veda-ui/react";
+import React from "$veda-ui/react";
 import { NavLink } from "$veda-ui/react-router-dom";
 import styled from "$veda-ui/styled-components";
 import { glsp, themeVal, media } from "$veda-ui/@devseed-ui/theme-provider";
 import { Button } from "$veda-ui/@devseed-ui/button";
-import { getString } from 'veda';
-import { CollecticonArrowRight, CollecticonXmarkSmall } from "$veda-ui/@devseed-ui/collecticons";
+import { CollecticonArrowRight } from "$veda-ui/@devseed-ui/collecticons";
 import Hug from "$veda-ui-scripts/styles/hug";
 import { VarHeading } from "$veda-ui-scripts/styles/variable-components";
 import { variableGlsp } from "$veda-ui-scripts/styles/variable-utils";
@@ -12,6 +11,7 @@ import { variableGlsp } from "$veda-ui-scripts/styles/variable-utils";
 import Partners from "./partners";
 import Keypoints from "./keypoints";
 import { ArrowLink } from "./arrow-link";
+import AMSBanner from './ams-banner';
 
 const HomeContent = styled(Hug)`
   padding: ${variableGlsp(2.5, 0)};
@@ -88,36 +88,9 @@ const InfoCalloutHeadline = styled.div`
 
 
 export default function HomeComponent() {
-  function showBanner() {
-    return !document.cookie.split('; ').filter(row => row.startsWith('showBanner=')).map(c=>c.split('=')[1])[0];
-  }
-
-  const [ showTempBanner, setShowTempBanner ] = useState(showBanner());
   return (
-    <> {
-      (showTempBanner && getString('tempBanner')?.other) &&
-        <div style={{
-          position: "absolute",
-          top: "4px",
-          left: "15%",
-          backgroundColor: "#D0545E",
-          textAlign: "center",
-          fontSize: "14px",
-          color: "white",
-          zIndex: 1000,
-          display: 'flex',
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "2px 10px",
-          borderRadius: "5px",
-          cursor: "pointer"
-        }}>
-          <a href={ getString('tempBannerUrl')?.other || "" } target="_blank" style={{ color: "inherit" }}> <b>{ getString('tempBanner').other }</b></a>
-          <Button variation='base-text' onClick={() => { setShowTempBanner(false); document.cookie = `showBanner=false`; }}>
-            <CollecticonXmarkSmall color="white"/>
-          </Button>
-        </div>
-      }
+    <>
+    <AMSBanner />
       <HomeContent>
         <IntroHeadline>
           <VarHeading size="xxlarge">Welcome</VarHeading>
