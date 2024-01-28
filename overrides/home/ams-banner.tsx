@@ -10,7 +10,7 @@ import {
 import Hug from "$veda-ui-scripts/styles/hug";
 import { getString } from 'veda';
 
-const AMS_BANNER_KEY = 'show-ams-banner'
+const AMS_BANNER_KEY = 'show-summer-school-banner'
 
 const BannerBox = styled.div`
   position: absolute;
